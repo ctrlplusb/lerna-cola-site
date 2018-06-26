@@ -1,0 +1,31 @@
+{
+  "sections": [
+    {
+      "title": "Getting Started",
+      "entries": [
+        {
+          "title": "Requirements",
+          "source": "requirements.md"
+        },
+        {
+          "title": "Installation",
+          "source": "installation.md"
+        }
+      ]
+    },
+    {
+      "title": "Plugins",
+      "sections": [
+        {
+          "title": "Built In",
+          "entries": [
+            {
+              "title": "@lerna-cola/plugin-build-babel",
+              "source": "plugin-build-babel.md"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

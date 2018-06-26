@@ -1,0 +1,82 @@
+{
+  "name": "lerna-cola-site",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Sean Matheson <sean@ctrlplusb.com>",
+  "license": "MIT",
+  "scripts": {
+    "build": "npm run generate:docs && next build",
+    "develop": "next",
+    "export": "npm run build && next export",
+    "generate:docs": "node scripts/build-docs",
+    "start": "next start"
+  },
+  "dependencies": {
+    "babel-plugin-emotion": "^9.2.4",
+    "dedent": "^0.7.0",
+    "emotion": "^9.2.4",
+    "emotion-server": "^9.2.4",
+    "emotion-theming": "^9.2.4",
+    "fs-extra": "^6.0.1",
+    "lodash.capitalize": "^4.2.1",
+    "next": "^6.0.3",
+    "prismjs": "^1.15.0",
+    "prop-types": "^15.6.2",
+    "react": "^16.4.1",
+    "react-dom": "^16.4.1",
+    "react-emotion": "^9.2.4",
+    "react-markdown": "3.3.4",
+    "react-sizeme": "2.5.2",
+    "rimraf": "^2.6.2",
+    "slug": "^0.9.1"
+  },
+  "devDependencies": {
+    "babel-eslint": "8.2.5",
+    "eslint": "4.19.1",
+    "eslint-config-airbnb": "16.1.0",
+    "eslint-config-prettier": "2.9.0",
+    "eslint-plugin-import": "2.13.0",
+    "eslint-plugin-jsx-a11y": "6.0.3",
+    "eslint-plugin-react": "7.10.0",
+    "prettier": "1.13.6"
+  },
+  "eslintConfig": {
+    "parser": "babel-eslint",
+    "root": true,
+    "env": {
+      "browser": true,
+      "es6": true,
+      "node": true
+    },
+    "extends": [
+      "airbnb",
+      "prettier"
+    ],
+    "rules": {
+      "array-callback-return": 0,
+      "camelcase": 0,
+      "import/prefer-default-export": 0,
+      "import/no-extraneous-dependencies": 0,
+      "jsx-a11y/anchor-is-valid": 0,
+      "no-nested-ternary": 0,
+      "no-underscore-dangle": 0,
+      "no-unused-expressions": 0,
+      "react/no-array-index-key": 0,
+      "react/react-in-jsx-scope": 0,
+      "react/forbid-prop-types": 0,
+      "react/jsx-filename-extension": 0,
+      "react/no-did-mount-set-state": 0,
+      "react/no-find-dom-node": 0,
+      "react/require-default-props": 0,
+      "react/sort-comp": 0
+    }
+  },
+  "prettier": {
+    "semi": false,
+    "singleQuote": true,
+    "trailingComma": "all"
+  },
+  "prettierIgnore": [
+    "*.html"
+  ]
+}
