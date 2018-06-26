@@ -2,9 +2,9 @@
 
 const dedent = require('dedent')
 const path = require('path')
-const fileTree = require('../utils/file-tree')
+const generateFileTree = require('./utils/generate-file-tree')
 
-fileTree.generate({
+generateFileTree({
   inputDir: path.resolve(process.cwd(), './data'),
   outputDir: path.resolve(process.cwd(), './pages/docs'),
   template: ({ depth, source }) =>
