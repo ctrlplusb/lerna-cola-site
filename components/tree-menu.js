@@ -2,10 +2,10 @@ import Link from 'next/link'
 import PropTypes from 'prop-types'
 import React from 'react'
 import { Anchor, Heading1 } from './styled'
-import treeReduce from '../utils/tree-reduce'
+import walkPageData from '../file-tree-generator/walk-page-data'
 
 export default function TreeMenu({ tree, rootPath }) {
-  return treeReduce(
+  return walkPageData(
     tree,
     (acc, { current, path, type }) => {
       if (type === 'section') {

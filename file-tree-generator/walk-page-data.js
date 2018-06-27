@@ -14,8 +14,8 @@ const slugify = input =>
 const treeReduce = (tree, fn, acc) => {
   const walk = (current, prevDepth, prevPath, walkAcc) => {
     const depth = prevDepth + 1
-    const accWithSections = current.sections
-      ? current.sections.reduce((sectionAcc, section) => {
+    const accWithSections = current.directories
+      ? current.directories.reduce((sectionAcc, section) => {
           const path = `${prevPath}/${slugify(section.title)}`
           return walk(
             section,
@@ -23,19 +23,19 @@ const treeReduce = (tree, fn, acc) => {
             path,
             fn(sectionAcc, {
               current: section,
-              type: 'section',
+              type: 'directory',
               depth,
               path,
             }),
           )
         }, walkAcc)
       : walkAcc
-    return current.entries
-      ? current.entries.reduce(
+    return current.pages
+      ? current.pages.reduce(
           (eacc, entry) =>
             fn(eacc, {
               current: entry,
-              type: 'entry',
+              type: 'page',
               depth,
               path: `${prevPath}/${slugify(entry.title)}`,
             }),
