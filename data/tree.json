@@ -1,6 +1,19 @@
 {
   "sections": [
     {
+      "title": "Another",
+      "entries": [
+        {
+          "title": "Requirements",
+          "source": "requirements.md"
+        },
+        {
+          "title": "Installation",
+          "source": "installation.md"
+        }
+      ]
+    },
+    {
       "title": "Getting Started",
       "entries": [
         {

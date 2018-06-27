@@ -24,7 +24,7 @@ export default class MyDocument extends Document {
         <Head>
           <title>Superpowers for your Lerna monorepos - Lerna Cola</title>
           <link
-            href="https://fonts.googleapis.com/css?family=Sedgwick+Ave+Display|Yanone+Kaffeesatz:400,700"
+            href="https://fonts.googleapis.com/css?family=Sedgwick+Ave+Display|Yanone+Kaffeesatz:400,700|Ubuntu+Mono"
             rel="stylesheet"
           />
           <link

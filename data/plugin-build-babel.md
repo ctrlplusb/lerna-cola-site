@@ -1,4 +1,4 @@
-# `@lerna-cola/plugin-build-babel`
+# @lerna-cola/plugin-build-babel
 
 A [build](#build) command plugin.
 

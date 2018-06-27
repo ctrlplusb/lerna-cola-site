@@ -1,20 +1,25 @@
 import styled from 'react-emotion'
 
 export const Anchor = styled.a`
-  color: ${props => props.theme.colors.accent};
+  color: ${props => props.theme.colors.branding};
   font-family: ${props => props.theme.fonts.secondary};
+  text-decoration: none;
+  &:visited,
+  &:active {
+    color: ${props => props.theme.colors.branding};
+  }
 `
 
 export const Button = styled.button`
   align-items: center;
   background-color: ${props => props.theme.colors.branding};
   border: solid 1px ${props => props.theme.colors.branding};
-  border-radius: 1rem;
-  color: ${props => props.theme.color.brandingContrast};
+  /* border-radius: 1rem; */
+  color: ${props => props.theme.colors.brandingContrast};
   display: inline-flex;
   font-family: ${props => props.theme.fonts.secondary};
   font-size: 1rem;
-  height: ${props => 35 / props.theme.baseFontSize};
+  height: ${props => 40 / props.theme.baseFontSize}rem;
   padding: 0 ${props => 16 / props.theme.baseFontSize}rem;
   line-height: 1;
   letter-spacing: 1;
@@ -22,7 +27,7 @@ export const Button = styled.button`
   text-transform: uppercase;
   &:hover: {
     background-color: ${props => props.theme.colors.brandingContrast};
-    color: ${props => props.theme.color.branding};
+    color: ${props => props.theme.colors.branding};
   }
   &:disabled {
     border-bottom: #a9a9a9;

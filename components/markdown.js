@@ -3,6 +3,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import ReactMarkdown from 'react-markdown'
+import dedent from 'dedent'
 import { InlineAnchor, Heading1, Ul, Li, Paragraph, Strong } from './styled'
 import Code from './code'
 
@@ -31,17 +32,17 @@ const renderers = {
   strong: Strong,
 }
 
-export default function Markdown({ source }) {
+export default function Markdown({ children }) {
   return (
     <ReactMarkdown
       allowedTypes={allowedTypes}
       renderers={renderers}
       skipHtml
-      source={source}
+      source={dedent(children)}
     />
   )
 }
 
 Markdown.propTypes = {
-  source: PropTypes.string.isRequired,
+  children: PropTypes.string.isRequired,
 }

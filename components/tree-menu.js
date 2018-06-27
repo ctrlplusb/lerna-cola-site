@@ -1,9 +1,10 @@
-import React from 'react'
 import Link from 'next/link'
+import PropTypes from 'prop-types'
+import React from 'react'
 import { Anchor, Heading1 } from './styled'
 import treeReduce from '../utils/tree-reduce'
 
-export default function TreeMenu({ tree, root }) {
+export default function TreeMenu({ tree, rootPath }) {
   return treeReduce(
     tree,
     (acc, { current, path, type }) => {
@@ -13,7 +14,7 @@ export default function TreeMenu({ tree, root }) {
         return [
           ...acc,
           <Link>
-            <Anchor href={`${root}${path}`}>{current.title}</Anchor>
+            <Anchor href={`${rootPath}${path}`}>{current.title}</Anchor>
           </Link>,
         ]
       }
@@ -21,4 +22,13 @@ export default function TreeMenu({ tree, root }) {
     },
     [],
   )
+}
+
+TreeMenu.propTypes = {
+  tree: PropTypes.object.isRequired,
+  rootPath: PropTypes.string,
+}
+
+TreeMenu.defaultProps = {
+  rootPath: '',
 }

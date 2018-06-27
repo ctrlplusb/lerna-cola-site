@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import styled, { hydrate, keyframes, css, injectGlobal } from 'react-emotion'
+import { hydrate, css, injectGlobal } from 'react-emotion'
 import { ThemeProvider } from 'emotion-theming'
 
 // Adds server generated styles to emotion cache.
@@ -64,11 +64,17 @@ const theme = {
   fonts: {
     primary: '"Yanone Kaffeesatz", sans-serif',
     secondary: '"Sedgwick Ave Display", cursive',
-    code: 'monospace',
+    code: '"Ubunt Mono", monospace',
   },
   colors: {
     branding: '#fe001a',
     brandingContrast: '#fff',
+  },
+  commonRules: {
+    pageGutter: css`
+      padding-left: 2rem;
+      padding-right: 2rem;
+    `,
   },
 }
 
@@ -76,7 +82,7 @@ injectGlobal`
   html, body {
     background: #fff;
     font-family: ${theme.fonts.primary};
-    font-size: ${theme.baseFont}px;
+    font-size: ${theme.baseFontSize}px;
     margin: 0;
     min-height: 100%;
     padding: 0;

@@ -1,6 +1,7 @@
 import React from 'react'
 import App, { Container } from 'next/app'
 import Theme from '../components/theme'
+import Header from '../components/header'
 
 export default class MyApp extends App {
   static async getInitialProps({ Component, router, ctx }) {
@@ -18,7 +19,10 @@ export default class MyApp extends App {
     return (
       <Container>
         <Theme>
-          <Component {...pageProps} />
+          <div>
+            <Header />
+            <Component {...pageProps} />
+          </div>
         </Theme>
       </Container>
     )
