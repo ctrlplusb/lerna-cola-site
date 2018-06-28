@@ -5,10 +5,10 @@
   "author": "Sean Matheson <sean@ctrlplusb.com>",
   "license": "MIT",
   "scripts": {
-    "build:pages": "node scripts/build-pages",
+    "build:markdown-pages": "node scripts/build-markdown-pages",
     "build:next": "next build",
     "build": "npm-run-all build:*",
-    "develop:pages": "node scripts/develop-pages",
+    "develop:markdown-pages": "node scripts/develop-markdown-pages",
     "develop:next": "next",
     "develop": "npm-run-all --parallel develop:*",
     "export": "npm run build && next export",
@@ -20,7 +20,8 @@
     "emotion-server": "^9.2.4",
     "emotion-theming": "^9.2.4",
     "fs-extra": "^6.0.1",
-    "next": "^6.0.3",
+    "lodash.debounce": "^4.0.8",
+    "next": "^6.1.0",
     "prismjs": "^1.15.0",
     "prop-types": "^15.6.2",
     "react": "^16.4.1",
@@ -29,7 +30,8 @@
     "react-markdown": "3.3.4",
     "react-sizeme": "2.5.2",
     "rimraf": "^2.6.2",
-    "slug": "^0.9.1"
+    "slug": "^0.9.1",
+    "templatiser": "^0.2.4"
   },
   "devDependencies": {
     "babel-eslint": "8.2.5",

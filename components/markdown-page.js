@@ -1,14 +1,14 @@
 import React from 'react'
 import styled from 'react-emotion'
 import Markdown from './markdown'
-import TreeMenu from './tree-menu'
-import docsTreeDefinition from '../data/tree.json'
+import MarkdownPagesMenu from './markdown-pages-menu'
+import metaTree from '../markdown-pages-meta-tree.json'
 
 export default function DocPage({ children }) {
   return (
     <Container>
       <Column>
-        <TreeMenu tree={docsTreeDefinition} rootPath="/docs" />
+        <MarkdownPagesMenu tree={metaTree} />
       </Column>
       <Main>
         <Markdown>{children}</Markdown>

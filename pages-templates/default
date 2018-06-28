@@ -1,8 +1,0 @@
-import React from 'react'
-import DocPage from '<%= pathToRoot %>/components/doc-page'
-
-const markdown = `
-<%=source%>
-`
-
-export default () => <DocPage>{markdown}</DocPage>

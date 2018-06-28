@@ -1,20 +1,22 @@
 import Link from 'next/link'
 import PropTypes from 'prop-types'
+import walk from 'templatiser/walk'
 import React from 'react'
 import { Anchor, Heading1 } from './styled'
-import walkPageData from '../file-tree-generator/walk-page-data'
 
-export default function TreeMenu({ tree, rootPath }) {
-  return walkPageData(
+export default function TreeMenu({ tree }) {
+  return walk(
     tree,
-    (acc, { current, path, type }) => {
-      if (type === 'section') {
-        return [...acc, <Heading1>{current.title}</Heading1>]
-      } else if (type === 'entry') {
+    (acc, { config, relativePath, name, type }) => {
+      if (type === 'directory') {
+        return [...acc, <Heading1>{config.title || name}</Heading1>]
+      } else if (type === 'file') {
         return [
           ...acc,
           <Link>
-            <Anchor href={`${rootPath}${path}`}>{current.title}</Anchor>
+            <Anchor href={`${relativePath}/${name}`}>
+              {config.title || name}
+            </Anchor>
           </Link>,
         ]
       }
