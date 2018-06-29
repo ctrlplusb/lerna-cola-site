@@ -1,7 +1,11 @@
 import styled from 'react-emotion'
 
 export const Anchor = styled.a`
-  color: ${props => props.theme.colors.branding};
+  color: ${props =>
+    props.contrast
+      ? props.theme.colors.brandingContrast
+      : props.theme.colors.branding};
+  cursor: pointer;
   font-family: ${props => props.theme.fonts.secondary};
   text-decoration: none;
   &:visited,
@@ -38,8 +42,13 @@ export const Button = styled.button`
   }
 `
 
-export const Heading1 = styled.h1`
-  font-size: 2rem;
+export const H1 = styled.h1`
+  font-size: ${props => 45 / props.theme.baseFontSize}rem;
+  font-family: ${props => props.theme.fonts.secondary};
+`
+
+export const H2 = styled.h1`
+  font-size: ${props => 45 / props.theme.baseFontSize}rem;
   font-family: ${props => props.theme.fonts.secondary};
 `
 
@@ -49,7 +58,7 @@ export const InlineAnchor = styled(Anchor)`
 
 export const Li = styled.li``
 
-export const Paragraph = styled.p`
+export const P = styled.p`
   margin-bottom: 1rem;
 `
 
@@ -58,5 +67,7 @@ export const Strong = styled.strong`
 `
 
 export const Ul = styled.ul`
-  margin: 0 0.5rem;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+  padding-left: 1.5rem;
 `

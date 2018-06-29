@@ -59,21 +59,33 @@ const Animated = styled.div`
 `
 */
 
+const baseFontSize = 20
+
+const sizes = {
+  pageGutter: '2rem',
+  contentBreak: `${35 / baseFontSize}rem`,
+}
+
 const theme = {
-  baseFontSize: 20,
+  baseFontSize,
   fonts: {
     primary: '"Yanone Kaffeesatz", sans-serif',
     secondary: '"Sedgwick Ave Display", cursive',
-    code: '"Ubunt Mono", monospace',
+    code: '"Ubuntu Mono", monospace',
   },
   colors: {
     branding: '#fe001a',
     brandingContrast: '#fff',
   },
+  sizes,
   commonRules: {
     pageGutter: css`
-      padding-left: 2rem;
-      padding-right: 2rem;
+      padding-left: ${sizes.pageGutter};
+      padding-right: ${sizes.pageGutter};
+    `,
+    contentMargins: css`
+      margin-top: ${sizes.contentBreak};
+      margin-bottom: ${sizes.contentBreak};
     `,
   },
 }
@@ -83,9 +95,20 @@ injectGlobal`
     background: #fff;
     font-family: ${theme.fonts.primary};
     font-size: ${theme.baseFontSize}px;
+    line-height: 1;
     margin: 0;
     min-height: 100%;
     padding: 0;
+  }
+
+  *, *:before, *:after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+
+  pre, code {
+    font-family: ${theme.fonts.code};
   }
 `
 

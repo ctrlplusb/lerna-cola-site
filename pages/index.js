@@ -60,4 +60,5 @@ const Content = styled.div`
   ${props => props.theme.commonRules.pageGutter};
   max-width: 600px;
   margin: 0 auto;
+  ${props => props.theme.commonRules.contentMargins};
 `

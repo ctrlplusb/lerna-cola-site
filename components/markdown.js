@@ -4,7 +4,19 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import ReactMarkdown from 'react-markdown'
 import dedent from 'dedent'
-import { InlineAnchor, Heading1, Ul, Li, Paragraph, Strong } from './styled'
+import {
+  InlineAnchor,
+  H1,
+  H2,
+  H3,
+  H4,
+  H5,
+  H6,
+  Ul,
+  Li,
+  P,
+  Strong,
+} from './styled'
 import Code from './code'
 
 const allowedTypes = [
@@ -24,11 +36,28 @@ const allowedTypes = [
 
 const renderers = {
   code: ({ language, value }) => <Code language={language}>{value}</Code>,
-  heading: Heading1,
+  heading: ({ children, level }) => {
+    switch (level) {
+      case 1:
+        return <H1>{children}</H1>
+      case 2:
+        return <H2>{children}</H2>
+      case 3:
+        return <H3>{children}</H3>
+      case 4:
+        return <H4>{children}</H4>
+      case 5:
+        return <H5>{children}</H5>
+      case 6:
+        return <H6>{children}</H6>
+      default:
+        return <P>{children}</P>
+    }
+  },
   link: InlineAnchor,
   list: Ul,
   listItem: Li,
-  paragraph: Paragraph,
+  paragraph: P,
   strong: Strong,
 }
 

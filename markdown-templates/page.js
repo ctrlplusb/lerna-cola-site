@@ -1,5 +1,5 @@
 import React from 'react'
-import MarkdownPage from '<%= pathToRoot %>/components/markdown-page'
+import MarkdownPage from '<%= pathToRoot %>components/markdown-page'
 
 const markdown = `
 <%=source%>

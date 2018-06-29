@@ -1,0 +1,3 @@
+[submodule "lerna-cola"]
+	path = lerna-cola
+	url = https://github.com/ctrlplusb/lerna-cola
