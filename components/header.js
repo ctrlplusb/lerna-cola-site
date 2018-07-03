@@ -15,7 +15,7 @@ export default function Header() {
             </Link>
           </HeaderLink>
           <HeaderLink>
-            <Link href="/docs/getting-started/installation" prefetch>
+            <Link href="/docs/01-getting-started/01-requirements" prefetch>
               <HeaderAnchor contrast>DOCS</HeaderAnchor>
             </Link>
           </HeaderLink>
@@ -39,10 +39,10 @@ const Container = styled.div`
   align-items: center;
   background-color: ${props => props.theme.colors.branding};
   display: flex;
-  height: ${props => 60 / props.theme.baseFontSize}rem;
+  height: ${props => props.theme.sizes.headerHeight};
   justify-content: space-between;
-  ${props => props.theme.commonRules.pageGutter};
   transition-property: background-color;
+  ${props => props.theme.commonRules.pageGutter};
   ${transition};
 `
 const FixedContainer = styled(Container)`
@@ -50,6 +50,7 @@ const FixedContainer = styled(Container)`
   position: fixed;
   top: 0;
   width: 100vw;
+  z-index: ${props => props.theme.zIndexes.higher};
 `
 
 const HeaderLink = styled.div`

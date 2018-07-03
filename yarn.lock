@@ -4852,9 +4852,9 @@ tar@^4:
     safe-buffer "^5.1.2"
     yallist "^3.0.2"
 
-templatiser@^0.3.0:
-  version "0.3.0"
-  resolved "https://registry.yarnpkg.com/templatiser/-/templatiser-0.3.0.tgz#87da361c6d3ce0bb6ee359f8abff326b69cfb20a"
+templatiser@^0.5.0:
+  version "0.5.0"
+  resolved "https://registry.yarnpkg.com/templatiser/-/templatiser-0.5.0.tgz#07f924332ad2df68053cb568ab5bad0212004e16"
   dependencies:
     fs-extra "^6.0.1"
     lodash.template "^4.4.0"

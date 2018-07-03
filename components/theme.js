@@ -62,6 +62,7 @@ const Animated = styled.div`
 const baseFontSize = 20
 
 const sizes = {
+  headerHeight: `${60 / baseFontSize}rem`,
   pageGutter: '2rem',
   contentBreak: `${35 / baseFontSize}rem`,
 }
@@ -78,14 +79,31 @@ const theme = {
     brandingContrast: '#fff',
   },
   sizes,
+  zIndexes: {
+    lowest: 1,
+    lower: 10,
+    normal: 50,
+    high: 100,
+    higher: 300,
+    highest: 600,
+  },
   commonRules: {
-    pageGutter: css`
-      padding-left: ${sizes.pageGutter};
-      padding-right: ${sizes.pageGutter};
+    clearFix: css`
+      &:after {
+        content: '.';
+        visibility: hidden;
+        display: block;
+        height: 0;
+        clear: both;
+      }
     `,
     contentMargins: css`
       margin-top: ${sizes.contentBreak};
       margin-bottom: ${sizes.contentBreak};
+    `,
+    pageGutter: css`
+      padding-left: ${sizes.pageGutter};
+      padding-right: ${sizes.pageGutter};
     `,
   },
 }
@@ -109,6 +127,11 @@ injectGlobal`
 
   pre, code {
     font-family: ${theme.fonts.code};
+  }
+
+  h1, h2, h3, h4, h5, h6, pre, code ,span, ul, li, ol, p {
+    padding: 0;
+    margin: 0;
   }
 `
 

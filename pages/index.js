@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'react-emotion'
+import dedent from 'dedent'
 import Markdown from '../components/markdown'
 import { Button } from '../components/styled'
 
@@ -11,7 +12,7 @@ export default () => (
     </IntroBanner>
     <Content>
       <Markdown>
-        {`
+        {dedent(`
           [Lerna](https://lernajs.io/) makes it crazy easy to manage cross package dependencies and provides sane methods to version them. It takes away the fear of creating and maintaining a wide set of packages, allowing us to fully embrace the module ethos by creating packages with isolated responsibilities.
 
           Lerna Cola wants to build on top of these core principles by providing the following additional features:
@@ -25,7 +26,7 @@ export default () => (
           The commands utilise a rich plugin eco-system, allowing for 3rd party contributions.
 
           Lift your build, development and deployment to the root of your monorepo, keep your packages clean, and utilise the full benefits of a monorepo structure.
-        `}
+        `)}
       </Markdown>
       <Button>Read the docs</Button>
     </Content>

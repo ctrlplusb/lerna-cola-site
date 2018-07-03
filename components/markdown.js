@@ -67,7 +67,7 @@ export default function Markdown({ children }) {
       allowedTypes={allowedTypes}
       renderers={renderers}
       skipHtml
-      source={dedent(children)}
+      source={children}
     />
   )
 }

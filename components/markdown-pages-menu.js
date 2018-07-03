@@ -5,30 +5,13 @@ import styled from 'react-emotion'
 import React, { createContext } from 'react'
 import { Anchor } from './styled'
 
-const parseRootPath = rootPath => {
-  let result = rootPath
-  if (!result) {
-    return result
-  }
-  if (!result.startsWith('/')) {
-    result = `/${result}`
-  }
-  if (!result.endsWith('/')) {
-    result = `${result}/`
-  }
-  return result
-}
-
 const { Provider, Consumer } = createContext()
 
-const traverse = (tree, rootPath) => {
+const traverse = tree => {
   const elements = []
 
   walk(tree, current => {
     const { config, relativePath, name, type } = current
-    if (rootPath && !relativePath.startsWith(rootPath)) {
-      return undefined
-    }
     if (type === 'directory') {
       const children = traverse(current)
       elements.push(
@@ -49,7 +32,7 @@ const traverse = (tree, rootPath) => {
     } else if (type === 'file') {
       elements.push(
         <PageLink>
-          <Link href={`${relativePath}/${name}`}>
+          <Link href={`/docs${relativePath}/${name}`}>
             <Anchor>{config.title || name}</Anchor>
           </Link>
         </PageLink>,
@@ -61,19 +44,12 @@ const traverse = (tree, rootPath) => {
   return elements
 }
 
-export default function MarkdownPagesMenu({ tree, rootPath }) {
-  return (
-    <Provider value={1}>{traverse(tree, parseRootPath(rootPath))}</Provider>
-  )
+export default function MarkdownPagesMenu({ tree }) {
+  return <Provider value={1}>{traverse(tree)}</Provider>
 }
 
 MarkdownPagesMenu.propTypes = {
   tree: PropTypes.object.isRequired,
-  rootPath: PropTypes.string,
-}
-
-MarkdownPagesMenu.defaultProps = {
-  rootPath: '',
 }
 
 const sizeMap = depth => {
@@ -117,4 +93,6 @@ const SectionTitle = styled.div`
   }
 `
 
-const PageLink = styled.div``
+const PageLink = styled.div`
+  margin-bottom: ${props => 15 / props.theme.baseFontSize}rem;
+`

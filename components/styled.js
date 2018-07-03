@@ -45,6 +45,8 @@ export const Button = styled.button`
 export const H1 = styled.h1`
   font-size: ${props => 45 / props.theme.baseFontSize}rem;
   font-family: ${props => props.theme.fonts.secondary};
+  margin-bottom: ${props => 28 / props.theme.baseFontSize}rem;
+  margin-top: ${props => 28 / props.theme.baseFontSize}rem;
 `
 
 export const H2 = styled.h1`

@@ -1,6 +1,6 @@
 module.exports = {
-  markdownTemplates: 'markdown-templates',
-  markdownPages: 'markdown-pages',
-  nextPages: 'pages',
+  markdownTemplates: 'templates',
+  markdownPages: 'lerna-cola/docs',
+  nextPages: 'pages/docs',
   markdownMetaTreeFile: 'markdown-pages-meta-tree.json',
 }
